@@ -17,11 +17,11 @@ class ProductGridScreen extends StatelessWidget {
         title: Text('Product Grid'),
       ),
       body: GridView.builder(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(4),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
+          crossAxisCount: 1,
+          crossAxisSpacing: 1,
+          mainAxisSpacing: 2,
         ),
         itemCount: products.length,
         itemBuilder: (context, index) {
@@ -29,29 +29,30 @@ class ProductGridScreen extends StatelessWidget {
           return Card(
             elevation: 4,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment:MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: double.maxFinite,
-                  height: 100,
+                  width: 200,
+                  height: 300,
                   child: Image.asset(
                     product['image'],
                     fit: BoxFit.cover,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         product['name'],
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 4),
-                      Text('Price: ${product['price']}', style: TextStyle(fontSize: 12)),
                       SizedBox(height: 2),
-                      Text('Quantity: ${product['quantity']}', style: TextStyle(fontSize: 12)),
+                      Text('Price: ${product['price']}', style: TextStyle(fontSize: 15)),
+                      SizedBox(height: 2),
+                      Text('Quantity: ${product['quantity']}', style: TextStyle(fontSize: 15)),
                     ],
                   ),
                 ),

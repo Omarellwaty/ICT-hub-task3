@@ -28,13 +28,25 @@ class _ImageSliderScreenState extends State<ImageSliderScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text('image slider'),
+    ),
+     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(_images[_currentIndex]),
+          Container(
+            width: 200,
+            height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue,width:10)
+              ),
+
+              child:Image.asset(_images[_currentIndex])
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
                 icon: Icon(Icons.arrow_back),
@@ -48,6 +60,6 @@ class _ImageSliderScreenState extends State<ImageSliderScreen> {
           ),
         ],
       ),
-    );
+     ));
   }
 }

@@ -10,7 +10,11 @@ class _CounterScreenState extends State<CounterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('counter screen'),
+        ),
+      body:Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -42,6 +46,6 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
         ],
       ),
-    );
+      ));
   }
 }

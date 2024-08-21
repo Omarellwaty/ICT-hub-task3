@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'counter_screen.dart';
-import 'image_slider_screen.dart';
-import 'product_grid_screen.dart';
-import 'calculator_screen.dart';
+import 'screens/counter_screen.dart';
+import 'screens/image_slider_screen.dart';
+import 'screens/product_grid_screen.dart';
+import 'screens/calculator_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
         primaryColor: Colors.blue,
 
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.red,
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.green,
