@@ -16,13 +16,13 @@ class _ImageSliderScreenState extends State<ImageSliderScreen> {
 
   void _nextImage() {
     setState(() {
-      _currentIndex = (_currentIndex + 1) ;
+      _currentIndex = (_currentIndex + 1) % _images.length;
     });
   }
 
   void _previousImage() {
     setState(() {
-      _currentIndex = (_currentIndex - 1 ) ;
+      _currentIndex = (_currentIndex - 1 + _images.length) % _images.length;
     });
   }
 
@@ -37,10 +37,10 @@ class _ImageSliderScreenState extends State<ImageSliderScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 200,
-            height: 200,
+            width: 300,
+            height: 300,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.blue,width:10)
+                border: Border.all(color: Colors.grey,width:15)
               ),
 
               child:Image.asset(_images[_currentIndex])

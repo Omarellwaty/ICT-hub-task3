@@ -1,11 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:task/screens/profile_screen.dart';
+import 'firebase_options.dart';
+
 import 'package:flutter/material.dart';
 import 'screens/counter_screen.dart';
 import 'screens/image_slider_screen.dart';
 import 'screens/product_grid_screen.dart';
 import 'screens/calculator_screen.dart';
+import 'screens/login_screen.dart' ;
+import 'package:task/new_app.dart' ;
 
-void main() {
-  runApp(MyApp());
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(NewApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,11 +30,11 @@ class MyApp extends StatelessWidget {
 
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.pink,
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.green,
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Colors.pink,
           unselectedItemColor: Colors.black,
         ),
       ),
@@ -45,6 +56,7 @@ class _MainScreenState extends State<MainScreen> {
     ImageSliderScreen(),
     ProductGridScreen(),
     CalculatorScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -75,6 +87,11 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.calculate),
             label: 'Calculator',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'person',
+          ),
+
         ],
       ),
     );

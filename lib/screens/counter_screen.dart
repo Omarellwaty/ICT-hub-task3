@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CounterScreen extends StatefulWidget {
   @override
@@ -15,9 +17,15 @@ class _CounterScreenState extends State<CounterScreen> {
           title: Text('counter screen'),
         ),
       body:Center(
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SvgPicture.asset(
+            'assets/images_svg/image 8.svg',
+            width: 100.0,
+            height: 100.0,
+          ),
           Text(
             'Counter: $_count',
             style: TextStyle(fontSize: 24),
